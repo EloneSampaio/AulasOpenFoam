@@ -11,43 +11,43 @@ convertToMeters 1;
 dy1     0;
 dy2     5;
 
-dz0       0;
-dz1      -0.3535;
-dz2       0.3535;
-dz3       0.6465
-dz4      -0.6465;
+dz0     0;
+dz3     0.3535;
+dz2    -0.3535;
+dz1     1.5;
+dz4    -1.5;
 
 dx0       0;
-dx1      -0.3535;
-dx2       0.3535;
-dx3       0.6465;
-dx4      -0.6465;
+dx3       0.3535;
+dx2      -0.3535;
+dx1      -3;
+dx4       3;
 
 
 
 vertices
 (
     //vertices da face esquerda externa
-    ($dx1 $dy1 $dz2) // 0
-    ($dx2 $dy1 $dz2) // 1
-    ($dx3 $dy1 $dz2) // 2
-    ($dx4 $dy1 $dz2) // 3
+    ($dx1 $dy1 $dz4) // 0
+    ($dx2 $dy1 $dz4) // 1
+    ($dx3 $dy1 $dz4) // 2
+    ($dx4 $dy1 $dz4) // 3
     
-    ($dx4 $dy2 $dz2) // 4
-    ($dx3 $dy2 $dz2) // 5
-    ($dx2 $dy2 $dz2) // 6
-    ($dx1 $dy2 $dz2)// 7
+    ($dx4 $dy2 $dz4) // 4
+    ($dx3 $dy2 $dz4) // 5
+    ($dx2 $dy2 $dz4) // 6
+    ($dx1 $dy2 $dz4)//  7
 
 //vertices da face esquerda interna
-    ($dx1 $dy1 $dz1) // 8
-    ($dx2 $dy1 $dz1) // 9
-    ($dx3 $dy1 $dz1) // 10
-    ($dx4 $dy1 $dz1) // 11
+    ($dx1 $dy1 $dz2) // 8
+    ($dx2 $dy1 $dz2) // 9
+    ($dx3 $dy1 $dz2) // 10
+    ($dx4 $dy1 $dz2) // 11
     
-    ($dx4 $dy2 $dz1) // 12
-    ($dx3 $dy2 $dz1) // 13
-    ($dx2 $dy2 $dz1) // 14
-    ($dx1 $dy2 $dz1) // 15
+    ($dx4 $dy2 $dz2) // 12
+    ($dx3 $dy2 $dz2) // 13
+    ($dx2 $dy2 $dz2) // 14
+    ($dx1 $dy2 $dz2) // 15
 
     ($dx1 $dy1 $dz3) // 16
     ($dx2 $dy1 $dz3) // 17
@@ -59,15 +59,15 @@ vertices
     ($dx2 $dy2 $dz3) // 22
     ($dx1 $dy2 $dz3) // 23
    
-    ($dx1 $dy1 $dz4) // 24
-    ($dx2 $dy1 $dz4) // 25
-    ($dx3 $dy1 $dz4) // 26
-    ($dx4 $dy1 $dz4) // 27
+    ($dx1 $dy1 $dz1) // 24
+    ($dx2 $dy1 $dz1) // 25
+    ($dx3 $dy1 $dz1) // 26
+    ($dx4 $dy1 $dz1) // 27
     
-    ($dx4 $dy2 $dz4) // 28
-    ($dx3 $dy2 $dz4) // 29
-    ($dx2 $dy2 $dz4) // 30
-    ($dx1 $dy2 $dz4) // 31
+    ($dx4 $dy2 $dz1) // 28
+    ($dx3 $dy2 $dz1) // 29
+    ($dx2 $dy2 $dz1) // 30
+    ($dx1 $dy2 $dz1) // 31
     
 );
 
@@ -90,6 +90,16 @@ blocks
 
 edges
 (
+
+    arc 14 13 (0 5 -0.5)
+    arc 13 21 (0.5 5 0)
+    arc 21 22 (0 5 0.5)
+    arc 22 14 (-0.5 5 0)
+
+    arc 9  10 (0 0 -0.5)
+    arc 10 18 (0.5 0 0)
+    arc 18 17 (0 0 0.5)
+    arc 17 9  (-0.5 0 0)
 );
 
 boundary
