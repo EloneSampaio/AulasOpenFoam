@@ -1,0 +1,37 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 5.x-197d9d3bf20a
+Exec   : postProcess -func streamFunction
+Date   : May 14 2019
+Time   : 14:30:55
+Host   : "fossee-dell"
+PID    : 25548
+I/O    : uncollated
+Case   : /home/fossee/OpenFOAM/fossee-5.0/run/tutorials/basic/potentialFoam/cylinder
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Time = 0
+
+Reading fields:
+    surfaceScalarFields: phi
+
+Executing functionObjects
+    functionObjects::streamFunction streamFunction calculating steam-function
+        Zero face: patch: 0 face: 0
+    functionObjects::streamFunction streamFunction writing field: streamFunction
+
+End
+

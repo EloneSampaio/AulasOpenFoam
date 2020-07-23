@@ -1,0 +1,120 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1;  //converter para metros
+
+dx1     0;  //variavel dimensao em x1
+dx2     10; //variavel dimensao em x2
+
+dz1     -2.5; //variavel dimensao em z1
+dz2      2.5;  //variavel dimensao em z2
+
+dy1      0; //variavel dimensao em y1
+dy2      2; //variavel dimensao em y2
+
+//criação dos vertices seguindo nosso esquema da imagem problema
+vertices
+(
+    ($dx1 $dy1 $dz1) // 0 //definindo vertices 0
+    ($dx2 $dy1 $dz1) // 1 //definindo vertices 1
+    ($dx2 $dy2 $dz1) // 2 //definindo vertice 2
+    ($dx1 $dy2 $dz1) // 3 //definindo vertices 3
+    
+    ($dx1 $dy1 $dz2) // 4 //definindo vertices 4
+    ($dx2 $dy1 $dz2) // 5 //definindo vertices 5
+    ($dx2 $dy2 $dz2) // 6 //definindo vertices 6
+    ($dx1 $dy2 $dz2) // 7 //definindo vertices 7
+    
+    
+);
+
+//defindo os blocos
+blocks
+(
+    //funcao hex recebe a numeração da face seguindo o sentido antiorario seguindo a orientação da mão direita(x-y-z)
+    hex (0 1 2 3 4 5 6 7) (20 10 10) simpleGrading (1 1 1)  //a funcao simplesGrading é pra refinamento da malha. definimos seu espaçamento
+);
+
+edges
+(
+);
+
+// boundary é função pra definir os nomes das faces
+boundary
+(
+    inlet //face inlet ,nossa entrada do tipo path
+    {
+        type patch;
+        faces
+        (
+            (0 4 7 3) //vertices da face seguindo a regra da mão direita
+        );
+    }
+    outlet //face outlet ,nossa saida do tipo path
+    outlet
+    {
+        type patch;
+        faces
+        (
+            (1 2 6 5) //vertices da face seguindo a regra da mão direita
+        );
+
+        );
+    }
+    //parede
+    walls
+    {
+        type wall;
+        faces
+        (
+            //definimos nossas paredes seguindo a orientação da mão direita
+            (3 7 6 2)
+            (0 1 5 4)
+            (0 3 2 1)
+            (5 6 7 4)
+
+        );
+    }
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //
+
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //

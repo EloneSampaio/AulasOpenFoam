@@ -1,0 +1,71 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 5.x-197d9d3bf20a
+Exec   : potentialFoam -withFunctionObjects -writePhi -writep
+Date   : May 14 2019
+Time   : 14:30:33
+Host   : "fossee-dell"
+PID    : 25272
+I/O    : uncollated
+Case   : /home/fossee/OpenFOAM/fossee-5.0/run/tutorials/basic/potentialFoam/cylinder
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+potentialFlow: Operating solver in PISO mode
+
+Reading velocity field U
+
+Constructing pressure field p
+
+Constructing velocity potential field Phi
+
+No MRF models present
+
+
+Calculating potential flow
+Using dynamicCode for functionObject error at line 53 in "/home/fossee/OpenFOAM/fossee-5.0/run/tutorials/basic/potentialFoam/cylinder/system/controlDict.functions.error"
+Creating new library in "dynamicCode/error/platforms/linux64GccDPInt32Opt/lib/liberror_fa6bcb9352550c3007ffd513d48777a6a88042f2.so"
+Invoking "wmake -s libso /home/fossee/OpenFOAM/fossee-5.0/run/tutorials/basic/potentialFoam/cylinder/dynamicCode/error"
+wmake libso /home/fossee/OpenFOAM/fossee-5.0/run/tutorials/basic/potentialFoam/cylinder/dynamicCode/error
+    ln: ./lnInclude
+    wmkdep: functionObjectTemplate.C
+    Ctoo: functionObjectTemplate.C
+    ld: /home/fossee/OpenFOAM/fossee-5.0/run/tutorials/basic/potentialFoam/cylinder/dynamicCode/error/../platforms/linux64GccDPInt32Opt/lib/liberror_fa6bcb9352550c3007ffd513d48777a6a88042f2.so
+GAMG:  Solving for Phi, Initial residual = 1, Final residual = 0.00661479, No Iterations 5
+GAMG:  Solving for Phi, Initial residual = 0.0126278, Final residual = 6.53434e-05, No Iterations 4
+GAMG:  Solving for Phi, Initial residual = 0.00260638, Final residual = 1.92433e-05, No Iterations 3
+GAMG:  Solving for Phi, Initial residual = 0.000909051, Final residual = 3.46853e-06, No Iterations 4
+Continuity error = 0.000137752
+Interpolated velocity error = 1.18742e-05
+
+Calculating approximate pressure field
+GAMG:  Solving for p, Initial residual = 1, Final residual = 0.00470514, No Iterations 4
+GAMG:  Solving for p, Initial residual = 0.0658838, Final residual = 0.000332537, No Iterations 5
+GAMG:  Solving for p, Initial residual = 0.0131474, Final residual = 0.000102528, No Iterations 3
+GAMG:  Solving for p, Initial residual = 0.00414447, Final residual = 1.76024e-05, No Iterations 5
+Looking up field U
+
+Reading inlet velocity uInfX
+
+U at inlet = 1 m/s
+Cylinder radius = 0.499614 m
+
+Evaluating analytical solution
+Writing relative error in U to "/home/fossee/OpenFOAM/fossee-5.0/run/tutorials/basic/potentialFoam/cylinder/0/error"
+ExecutionTime = 0.11 s  ClockTime = 20 s
+
+End
+
